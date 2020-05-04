@@ -88,7 +88,7 @@ def _fetch_api_token(session):
 
     all_script = soup.findAll("script")
     for script in all_script:
-        for line in script.text.splitlines():
+        for line in str(script).splitlines():
             if 'api_token' in line:
                 # api_token: "xoxs-12345-abcdefg....",
                 # "api_token":"xoxs-12345-abcdefg....",
